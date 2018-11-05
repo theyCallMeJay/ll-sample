@@ -1,0 +1,19 @@
+:host {
+    nav {
+        background-color:#F19A50;
+        .nav-link {
+            color: white;
+        }
+        .navbar-brand {
+            color: white;           
+        }
+
+        .dropdown-menu {
+            background-color:#F19A50;
+            .dropdown-item {
+                color: white;
+            }
+        }
+
+    }
+}
