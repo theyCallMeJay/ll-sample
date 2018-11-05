@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, FormBuilder, Validators} from '@angular/forms';
 import { LlHttpService } from 'src/app/shared/service/ll-http.service';
 import { User } from '../../../shared/model/ll-user.model';
 import { Router } from '@angular/router';
 import { LlGlobalStoreService } from 'src/app/shared/service/ll-global-store.service';
+import { llEmailValidator } from '../../../shared/validator/ll-email-validator';
 
 
 @Component({
@@ -16,47 +17,62 @@ export class LlLoginComponent implements OnInit {
   public loginForm: FormGroup;
   private userArray: User[];
   loggedInUser: User;
+  public emailErrorMessage: string;
 
 
   constructor(
     private llHttpService: LlHttpService,
     private llGlobalService: LlGlobalStoreService,
-    private router: Router
+    private router: Router,
+    private formBuilder: FormBuilder
   ) {
-    this.loginForm = new FormGroup({
-      email: new FormControl('')
+    this.loginForm = this.formBuilder.group({
+      email: new FormControl('', [Validators.required])
     });
   }
 
   ngOnInit() {
     this.llHttpService.getRequest('https://jsonplaceholder.typicode.com/users').subscribe((result: User[]) => {
       this.userArray = result;
+      this.loginForm.controls['email'].setValidators([llEmailValidator(this.userArray)]);
     });
   }
 
   public getErrorMessage() {
-     const emailCtrl =  this.loginForm['email'] as FormControl;
-     return emailCtrl.hasError('required') ? 'You must enter a value' :
-      emailCtrl.hasError('email') ? 'Not a valid email' :
-        '';
+     const emailCtrl =  this.loginForm.controls['email'] as FormControl;
+     /* return emailCtrl.hasError('required') ? 'You must enter a value' :
+      emailCtrl.hasError('invalid') ? 'Not a valid email' :
+        ''; */
+      if (emailCtrl.hasError('required')) {
+        return 'You must enter an email';
+      }
+
+      if (emailCtrl.hasError('invalid')) {
+        return 'Not a valid email';
+      }
+
+      if (emailCtrl.hasError('nonexist')) {
+        return 'Email does not exist';
+      }
   }
 
   onSubmit() {
-    console.log(this.userArray);
-    console.log(this.loginForm.controls['email'].value);
-    const email = this.loginForm.controls['email'].value;
+    console.log(this.loginForm.valid);
+    console.log(this.loginForm.controls['email'].errors);
 
-    const loggedInUser = this.userArray.find((ele) => {
-      return ele.email === email;
-    });
 
-    console.log(loggedInUser);
+    if (this.loginForm.valid) {
+      const email = this.loginForm.controls['email'].value;
 
-    if (loggedInUser) {
-      this.llGlobalService.setUser(loggedInUser);
-      this.llGlobalService.setUserId(loggedInUser.id);
-      this.llGlobalService.setIsLoggedIn(true);
-      this.router.navigate(['profile']);
+      const loggedInUser = this.userArray.find((ele) => {
+        return ele.email === email;
+      });
+      if (loggedInUser) {
+        this.llGlobalService.setUser(loggedInUser);
+        this.llGlobalService.setUserId(loggedInUser.id);
+        this.llGlobalService.setIsLoggedIn(true);
+        this.router.navigate(['profile']);
+      }
     }
   }
 }

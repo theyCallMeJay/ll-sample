@@ -5,8 +5,8 @@
         <mat-card-title>Log In</mat-card-title>
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <mat-form-field>
-              <input matInput placeholder="Enter your email" formControlName="email" required>
-                <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+              <input matInput placeholder="Enter your email" formControlName="email">
+                <mat-error *ngIf="loginForm?.controls['email']?.errors">{{getErrorMessage()}}</mat-error>
             </mat-form-field>
           <button type="submit" mat-raised-button color="warn">Log In</button>
         </form>

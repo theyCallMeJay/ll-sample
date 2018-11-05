@@ -1,0 +1,25 @@
+:host {
+    .container-fluid {
+        height: auto;
+        .row {
+            display: block;
+            margin: 0px;
+            padding: 0px;
+            position: relative;
+            top: 90px;
+            height: auto;
+            max-width: auto;
+            overflow-y: hidden;
+            overflow-x:auto;
+            word-wrap:normal;
+            .img {
+                 display: inline;
+                 padding: 5px;
+                 vertical-align:middle;
+                 img {
+                     margin: 5px;
+                 }
+            }
+        }
+    }
+}

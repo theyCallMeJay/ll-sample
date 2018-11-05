@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <mat-card class="card">
+        <mat-card-header>
+           <mat-card-title>Albums</mat-card-title>
+        </mat-card-header>
+        <mat-icon mat-list-icon>folder</mat-icon>
+        <mat-list-item *ngFor="let album of albums; let i = index;">
+          <p mat-line>{{album.title}} <span>({{albums.length}} photos)&nbsp;</span><a href="javascript:void(0)" (click)="openDialog(i)">View Photos</a></p>
+        </mat-list-item>
+      </mat-card>
+    </div>
+  </div>
+</div>

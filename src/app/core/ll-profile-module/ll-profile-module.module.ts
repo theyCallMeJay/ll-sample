@@ -12,6 +12,12 @@ import { MatListModule } from '@angular/material/list';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { LlNavbarComponent } from 'src/app/shared/component/ll-navbar/ll-navbar.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { LlAlbumComponent } from './ll-album/ll-album.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
+import { LlDialogComponent } from 'src/app/shared/component/ll-dialog/ll-dialog.component';
+
 
 
 
@@ -26,15 +32,21 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MatListModule,
     ReactiveFormsModule,
     FormsModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatIconModule,
+    MatCardModule,
+    MatDialogModule
   ],
   declarations: [
     LlProfileComponent,
     LlPostsComponent,
     LlSearchbarComponent,
     LlTodosComponent,
-    LlNavbarComponent
+    LlNavbarComponent,
+    LlAlbumComponent,
+    LlDialogComponent
     ],
+  entryComponents: [LlDialogComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class LlProfileModuleModule { }

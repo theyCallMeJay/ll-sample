@@ -1,5 +1,14 @@
 :host{ 
+
+    .searchIcon {
+        position: relative;
+        right: 30px;
+    }
     input {
         margin: 20px auto;
+        border-color: #F19A50;
+        border-radius: 25px;
+        border-width: 5px;
     }
+
 }

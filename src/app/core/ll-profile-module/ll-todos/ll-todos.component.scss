@@ -2,5 +2,11 @@
     .container-fluid {
         padding-top: 20px;
         min-height: 100vh;
+        .row {
+            padding-bottom: 10px;
+        }
+    ::ng-deep .mat-accent .mat-slider-track-fill {
+    background-color: black;
+    } 
     }
 }

@@ -18,7 +18,7 @@ import 'hammerjs';
   declarations: [
     AppComponent,
     LlFooterComponent,
-    LlHeaderComponent
+    LlHeaderComponent,
   ],
   imports: [
     BrowserModule,

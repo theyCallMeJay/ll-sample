@@ -12,7 +12,10 @@ import { LlHttpService } from 'src/app/shared/service/ll-http.service';
 export class LlTodosComponent implements OnInit {
 
   public rows: Todo[] = [];
+  public tempRows: Todo[] = [];
   public selected = [];
+  public slideChecked = false;
+  public color = 'warn';
 
   constructor(
     private llGlobalstoreService: LlGlobalStoreService,
@@ -22,7 +25,8 @@ export class LlTodosComponent implements OnInit {
       take(1),
       mergeMap(id => this.llHttpService.getRequest('https://jsonplaceholder.typicode.com/todos?userId=' + id))
     ).subscribe((data: Todo[]) => {
-      this.rows = data;
+      this.rows = [...data];
+      this.tempRows = data;
       this.initializeSelected(this.rows);
     });
   }
@@ -63,6 +67,20 @@ export class LlTodosComponent implements OnInit {
 
   displayCheck(row) {
     return true;
+  }
+
+  slideChanged(event) {
+    const checked = event.checked;
+    if (checked) {
+      const temp = this.tempRows.filter(data => {
+        return data.completed === true;
+      });
+
+      this.rows = temp;
+    } else {
+      this.rows = this.tempRows;
+    }
+
   }
 
 }
