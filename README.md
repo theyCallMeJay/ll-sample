@@ -15,21 +15,21 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 1. after staring the server, navigate to `http://localhost:4200/`. The app will automaticlly redirect you to a login page. You have to log in with a correct email, otherwise login will be rejected. For your convenience, feel free to use Sincere@april.biz
 
 2. after user logs in, user will be redirected to posts page by default. The post information is presented in a table with virtual scrolling enabled.  It will have some following features:
-    -User can click expand all to look at row details of all posts, and collapse all to close all rows.
-    -user can use the search bar to search any keyword that appears in either the body or title of the post. All natching posts will be shown
-    -user can click on the arrow head to open a row detail manually
+    i.User can click expand all to look at row details of all posts, and collapse all to close all rows.
+    ii.user can use the search bar to search any keyword that appears in either the body or title of the post. All natching posts will be shown
+    iii.user can click on the arrow head to open a row detail manually
    Note: due to limitation of the api provided, it is not possible to find the comment count of a single post, thus the comment count is a hard coded value here.
 
 3. Navigate to albums link, user will get to see a list of album names, number of photos in each album and a view photos link to open up a modal. Below are the features:
-    -a list of albums including album name, photo count and view photos link are presented
-    -user can click on the view photos link and open a modal showing all photos under that album
-    -user can click the close button in the modal or click outside the modal to close the modal
+    i.a list of albums including album name, photo count and view photos link are presented
+    ii.user can click on the view photos link and open a modal showing all photos under that album
+    iii.user can click the close button in the modal or click outside the modal to close the modal
     Note: due to the limitation of the api provided, it is not possible to find the exact photos uner an album for a specific user, thus photo count is hard coded here and every link will show the same set of photos
 
 4. Navigate to Todos link, user will see a list of tasks including both completed and incomplete: Features are listed below:
-    -user will see a list of tasks including its title and status, a checked box means the status is completed, vice versa
-    -user can use the slide toggle to show completed tasks only or to show all tasks
-    -user can check or check the box to change the status of a task
+    i.user will see a list of tasks including its title and status, a checked box means the status is completed, vice versa
+    ii.user can use the slide toggle to show completed tasks only or to show all tasks
+    iii.user can check or check the box to change the status of a task
 
 5. User can click on the company link located beside the log out button to redirect to the the author's website
 
