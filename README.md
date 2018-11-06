@@ -18,13 +18,13 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
     1. User can click expand all to look at row details of all posts, and collapse all to close all rows.
     2. user can use the search bar to search any keyword that appears in either the body or title of the post. All natching posts will be shown
     3. user can click on the arrow head to open a row detail manually  <br />
-   Note: due to limitation of the api provided, it is not possible to find the comment count of a single post, thus the comment count is a hard coded value here.
+   ***Note***: due to limitation of the api provided, it is not possible to find the comment count of a single post, thus the comment count is a hard coded value here.
 
 3. Navigate to albums link, user will get to see a list of album names, number of photos in each album and a view photos link to open up a modal. Below are the features:
     1. a list of albums including album name, photo count and view photos link are presented
     2. user can click on the view photos link and open a modal showing all photos under that album
     3. user can click the close button in the modal or click outside the modal to close the modal  <br />
-    Note: due to the limitation of the api provided, it is not possible to find the exact photos uner an album for a specific user, thus photo count is hard coded here and every link will show the same set of photos
+    ***Note***: due to the limitation of the api provided, it is not possible to find the exact photos uner an album for a specific user, thus photo count is hard coded here and every link will show the same set of photos
 
 4. Navigate to Todos link, user will see a list of tasks including both completed and incomplete: Features are listed below:
     1. user will see a list of tasks including its title and status, a checked box means the status is completed, vice versa
