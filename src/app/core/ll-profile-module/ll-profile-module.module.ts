@@ -18,6 +18,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { LlDialogComponent } from 'src/app/shared/component/ll-dialog/ll-dialog.component';
 import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+
 
 
 
@@ -37,7 +39,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatIconModule,
     MatCardModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    MatInputModule
   ],
   declarations: [
     LlProfileComponent,

@@ -1,4 +1,6 @@
 <div class="searchContainer">
-    <input class="searchBox" type="text" (keyup)="search($event)" placeholder="Search">
-    <i class="fa fa-search searchIcon"></i>
+    <mat-form-field>
+        <mat-icon matPrefix>search</mat-icon>
+        <input class="searchBox" matInput type="text" (keyup)="search($event)" placeholder="Search">
+    </mat-form-field>
 </div>

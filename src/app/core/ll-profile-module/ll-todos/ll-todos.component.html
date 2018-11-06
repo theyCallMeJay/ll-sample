@@ -6,14 +6,16 @@
   </div>
   <div class="row">
     <div class="col-sm-12">
-      <ngx-datatable class="material" [rows]="rows" [columnMode]="'force'" [headerHeight]="50"
+      <mat-card class="card">
+        <ngx-datatable class="material" [rows]="rows" [columnMode]="'force'" [headerHeight]="50"
         [footerHeight]="50" [rowHeight]="'auto'" [limit]="10" [selected]="selected" [selectionType]="'checkbox'"
         [selectAllRowsOnPage]="false" [displayCheck]="displayCheck" (activate)="onActivate($event)" (select)='onSelect($event)'>
         <ngx-datatable-column [width]="30" [sortable]="false" [canAutoResize]="false" [draggable]="false" [resizeable]="false"
-          [headerCheckboxable]="true" [checkboxable]="true">
-        </ngx-datatable-column>
-        <ngx-datatable-column name="Title"></ngx-datatable-column>
-      </ngx-datatable>
-    </div>
+        [headerCheckboxable]="true" [checkboxable]="true">
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Title"></ngx-datatable-column>
+    </ngx-datatable>
+  </mat-card>
+  </div>
   </div>
 </div>

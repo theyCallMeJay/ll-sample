@@ -6,29 +6,30 @@
   </div>
   <div class="row">
     <div class="col-sm-12">
-    <small>
-      <a href="javascript:void(0)" (click)="table.rowDetail.expandAllRows()">Expand All</a> |
-      <a href="javascript:void(0)" (click)="table.rowDetail.collapseAllRows()">Collapse All</a>
-    </small>
-  <ngx-datatable #myTable class='material expandable' [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50"
-    [rowHeight]="50" [scrollbarV]="true" [rows]='rows' (page)="onPage($event)">
-    <ngx-datatable-row-detail [rowHeight]="100" #myDetailRow (toggle)="onDetailToggle($event)">
-      <ng-template let-row="row" let-expanded="expanded" ngx-datatable-row-detail-template>
-        <div style="padding-left:35px;">
-          <div><strong>Body</strong></div>
-          <div>{{row.body}}</div>
-        </div>
-      </ng-template>
-    </ngx-datatable-row-detail>
-    <ngx-datatable-column [width]="50" [resizeable]="false" [sortable]="false" [draggable]="false" [canAutoResize]="false">
-      <ng-template let-row="row" let-expanded="expanded" ngx-datatable-cell-template>
-        <a href="javascript:void(0)" [class.datatable-icon-right]="!expanded" [class.datatable-icon-down]="expanded"
-          title="Expand/Collapse Row" (click)="toggleExpandRow(row)">
-        </a>
-      </ng-template>
-    </ngx-datatable-column>
-  
-    <ngx-datatable-column name="Post Title" width="200">
+      <mat-card class="card">
+        <small>
+          <a href="javascript:void(0)" (click)="table.rowDetail.expandAllRows()">Expand All</a> |
+          <a href="javascript:void(0)" (click)="table.rowDetail.collapseAllRows()">Collapse All</a>
+        </small>
+        <ngx-datatable #myTable class='material expandable' [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50"
+        [rowHeight]="50" [scrollbarV]="true" [rows]='rows' (page)="onPage($event)">
+        <ngx-datatable-row-detail [rowHeight]="100" #myDetailRow (toggle)="onDetailToggle($event)">
+          <ng-template let-row="row" let-expanded="expanded" ngx-datatable-row-detail-template>
+            <div style="padding-left:35px;">
+                <div><strong>Body</strong></div>
+                <div>{{row.body}}</div>
+              </div>
+            </ng-template>
+          </ngx-datatable-row-detail>
+          <ngx-datatable-column [width]="50" [resizeable]="false" [sortable]="false" [draggable]="false" [canAutoResize]="false">
+            <ng-template let-row="row" let-expanded="expanded" ngx-datatable-cell-template>
+              <a href="javascript:void(0)" [class.datatable-icon-right]="!expanded" [class.datatable-icon-down]="expanded"
+              title="Expand/Collapse Row" (click)="toggleExpandRow(row)">
+            </a>
+          </ng-template>
+        </ngx-datatable-column>
+        
+        <ngx-datatable-column name="Post Title" width="200">
       <ng-template let-row="row" ngx-datatable-cell-template>
         <strong>{{row.title}}</strong>
       </ng-template>
@@ -39,6 +40,7 @@
       </ng-template>
     </ngx-datatable-column>
   </ngx-datatable>
-    </div>
-  </div>
+</mat-card>
+</div>
+</div>
 </div>
