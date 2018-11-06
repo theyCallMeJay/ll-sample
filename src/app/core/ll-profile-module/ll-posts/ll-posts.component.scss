@@ -1,6 +1,15 @@
 :host {
     .container-fluid {
         padding-top: 20px;
-        min-height: 100vh;
+        margin-bottom: 60px;
+        .row {
+            padding-bottom: 10px;
+            ngx-datatable {
+                height: 500px;
+            }
+        }
+        a{
+            color: #F19A50;
+        }
     }
 }

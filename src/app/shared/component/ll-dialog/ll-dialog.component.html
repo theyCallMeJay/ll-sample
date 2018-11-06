@@ -1,7 +1,10 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-12 img" *ngFor="let url of photoUrls">
+    <div class="col-sm-12 img" *ngFor="let url of photoUrls" mat-dialog-content>
         <img [src]="url" alt="">
     </div>
+  </div>
+  <div class="row" mat-dialog-actions>
+      <button mat-raised-button color="primary" (click)="onNoClick()">Close</button>
   </div>
 </div>

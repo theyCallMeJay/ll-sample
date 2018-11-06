@@ -7,8 +7,7 @@ import { Post } from 'src/app/shared/model/ll-user.model';
 @Component({
   selector: 'app-ll-posts',
   templateUrl: './ll-posts.component.html',
-  styleUrls: ['./ll-posts.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./ll-posts.component.scss']
 })
 export class LlPostsComponent implements OnInit {
 
@@ -49,18 +48,15 @@ export class LlPostsComponent implements OnInit {
   }
 
   toggleExpandRow(row) {
-    console.log('Toggled Expand Row!', row);
     this.table.rowDetail.toggleExpandRow(row);
   }
 
   onDetailToggle(event) {
-    console.log('Detail Toggled', event);
   }
 
   onPage(event) {
     clearTimeout(this.timeout);
     this.timeout = setTimeout(() => {
-      console.log('paged!', event);
     }, 100);
   }
 }

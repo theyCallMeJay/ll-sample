@@ -1,9 +1,13 @@
 :host {
     .container-fluid {
         padding-top: 20px;
-        min-height: 100vh;
+        margin-bottom: 60px;
         .row {
             padding-bottom: 10px;
+        }
+
+        a {
+            color: orange;
         }
     ::ng-deep .mat-accent .mat-slider-track-fill {
     background-color: black;

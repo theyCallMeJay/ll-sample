@@ -38,7 +38,6 @@ export class LlAlbumComponent implements OnInit {
     ).subscribe((data: any) => {
       this.albums = data[0];
       this.photos = data[1].slice(0, 10);
-      console.log(this.photos);
     });
   }
 
@@ -50,7 +49,6 @@ export class LlAlbumComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
     });
   }
 

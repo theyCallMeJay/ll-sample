@@ -57,8 +57,6 @@ export class LlLoginComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.loginForm.valid);
-    console.log(this.loginForm.controls['email'].errors);
 
 
     if (this.loginForm.valid) {

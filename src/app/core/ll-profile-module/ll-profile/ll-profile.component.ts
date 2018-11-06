@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { LlGlobalStoreService } from 'src/app/shared/service/ll-global-store.service';
 import { ViewEncapsulation } from '@angular/compiler/src/core';
+import { llFadeAnimation } from 'src/app/shared/animation/ll-fadeAnimation';
 
 @Component({
   selector: 'app-ll-profile',
   templateUrl: './ll-profile.component.html',
   styleUrls: ['./ll-profile.component.scss'],
-  /* encapsulation: ViewEncapsulation.None */
+  animations: [llFadeAnimation]
 })
 export class LlProfileComponent implements OnInit {
   public userName: string;
@@ -21,6 +22,10 @@ export class LlProfileComponent implements OnInit {
       this.userName = result.name;
       this.company = result.company.name;
     });
+  }
+
+  public getRouterOutletState(outlet) {
+    return outlet.isActivated ? outlet.activatedRoute : '';
   }
 
 }

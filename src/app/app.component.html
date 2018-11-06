@@ -1,5 +1,9 @@
-<div *ngIf="!isLoggedIn">
-    <app-ll-header></app-ll-header>
+<div class="body">
+    <div *ngIf="!isLoggedIn">
+        <app-ll-header></app-ll-header>
+    </div>
+    <div class="content">
+        <router-outlet></router-outlet>
+    </div>
+    <app-ll-footer></app-ll-footer>
 </div>
-<router-outlet></router-outlet>
-<app-ll-footer></app-ll-footer>

@@ -2,7 +2,6 @@
     .container-fluid {
         margin: 20px auto;
         padding-top: 100px;
-        min-height:100vh;
         .card {
             max-width: 400;
             border-color: #F19A50;
@@ -17,7 +16,6 @@
         button {
             margin-left: 8px;
             background-color: #F19A50;
-            /* color: #F19A50; */
         }
     }
 }

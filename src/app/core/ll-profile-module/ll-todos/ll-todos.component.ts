@@ -43,26 +43,22 @@ export class LlTodosComponent implements OnInit {
   }
 
   onSelect({ selected }) {
-    console.log('Select Event', selected, this.selected);
 
     this.selected.splice(0, this.selected.length);
     this.selected.push(...selected);
+
+    const idList = this.selected.map((data: Todo) => data.id);
+    for (let i = 0; i < this.tempRows.length; i++) {
+      if (idList.includes(this.tempRows[i].id)) {
+        this.tempRows[i].completed = true;
+      } else {
+        this.tempRows[i].completed = false;
+      }
+    }
+
   }
 
   onActivate(event) {
-    console.log('Activate Event', event);
-  }
-
-  add() {
-    this.selected.push(this.rows[1], this.rows[3]);
-  }
-
-  update() {
-    this.selected = [this.rows[1], this.rows[3]];
-  }
-
-  remove() {
-    this.selected = [];
   }
 
   displayCheck(row) {
@@ -75,7 +71,6 @@ export class LlTodosComponent implements OnInit {
       const temp = this.tempRows.filter(data => {
         return data.completed === true;
       });
-
       this.rows = temp;
     } else {
       this.rows = this.tempRows;

@@ -16,9 +16,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.llGlobalStoreService.getIsLoggedIn().subscribe(data => {
-      console.log(data);
       this.isLoggedIn = data;
-      console.log(this.isLoggedIn);
     });
   }
 

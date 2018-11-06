@@ -11,11 +11,11 @@
       <a href="javascript:void(0)" (click)="table.rowDetail.collapseAllRows()">Collapse All</a>
     </small>
   <ngx-datatable #myTable class='material expandable' [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50"
-    [rowHeight]="50" [scrollbarV]="false" [rows]='rows' (page)="onPage($event)">
+    [rowHeight]="50" [scrollbarV]="true" [rows]='rows' (page)="onPage($event)">
     <ngx-datatable-row-detail [rowHeight]="100" #myDetailRow (toggle)="onDetailToggle($event)">
       <ng-template let-row="row" let-expanded="expanded" ngx-datatable-row-detail-template>
         <div style="padding-left:35px;">
-          <div><strong>Address</strong></div>
+          <div><strong>Body</strong></div>
           <div>{{row.body}}</div>
         </div>
       </ng-template>

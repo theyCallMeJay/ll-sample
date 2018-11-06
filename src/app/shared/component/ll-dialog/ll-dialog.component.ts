@@ -14,7 +14,6 @@ export class LlDialogComponent {
     public dialogRef: MatDialogRef<LlDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: LlDialogPhoto) {
       this.photoUrls = data.photos.map(element => element.thumbnailUrl);
-      console.log(this.photoUrls);
     }
 
   onNoClick(): void {
