@@ -1,6 +1,6 @@
 # LimelightTest
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0. by Jun Wang
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0. by junwang.toronto@gmail.com
 
 # Installation
 
